@@ -39,4 +39,15 @@ export class ProductsService {
   getOneProduct(id: number): Product | null{
       return this.products.find((p) => p.id === id) || null;
     }
+
+    onLikePoduct(product : Product){
+    if(product.isLiked==false){
+      product.likes++;
+      product.isLiked=true;
+    }
+    else{
+      product.likes--;
+      product.isLiked=false;
+    }
+  }
 }

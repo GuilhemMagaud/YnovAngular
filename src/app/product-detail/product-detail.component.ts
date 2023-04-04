@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from '../models/product.model';
+import { ProductsService } from '../servivce/products.service';
 
 @Component({
   selector: 'app-product-detail',
-  template: `
-    <p>
-      product-detail works!
-    </p>
-  `,
+  templateUrl: `./product-detail.component.html`,
   styles: [
   ]
 })
-export class ProductDetailComponent {
-  id: number;
+export class ProductDetailComponent implements OnInit {
+  myProduct: Product | null = null;
+  id: number = 0;
+  orientation: string = '';
 
+  constructor(private route: ActivatedRoute, private productsService: ProductsService){
+    this.route.params.subscribe( params => {
+      this.id = parseInt(params['id'])
+    });
+  }
+  ngOnInit(): void {
+    this.myProduct = this.productsService.getOneProduct(this.id);
+    this.orientation = "landscape";
+  }
 }

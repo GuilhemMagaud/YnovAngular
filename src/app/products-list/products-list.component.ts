@@ -4,11 +4,7 @@ import { ProductsService } from '../servivce/products.service';
 
 @Component({
   selector: 'app-products-list',
-  template: `
-    <p>
-      products-list works!
-    </p>
-  `,
+  templateUrl: `./products-list.component.html`,
   styles: [
   ]
 })
