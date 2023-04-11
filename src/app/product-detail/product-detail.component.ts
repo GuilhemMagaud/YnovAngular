@@ -23,4 +23,10 @@ export class ProductDetailComponent implements OnInit {
     this.myProduct = this.productsService.getOneProduct(this.id);
     this.orientation = "landscape";
   }
+
+  onLike(){
+    if (this.myProduct != null){
+      this.productsService.onLikePoduct(this.myProduct);
+    }
+  }
 }

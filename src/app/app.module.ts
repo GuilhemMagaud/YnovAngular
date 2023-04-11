@@ -15,6 +15,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ProductsListComponent,
     HeaderComponent,
     FooterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AboutComponent
   ],
   exports:[
     SortByDatePipe

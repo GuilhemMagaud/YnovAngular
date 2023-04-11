@@ -5,5 +5,7 @@
     la recherche : {{search}}
 </div>
 <div class="products">
-    <app-product-card *ngFor="let product of (products | sortByDate | filterBySearch:search)" [myProduct]="product"></app-product-card>
+    <a *ngFor="let product of (products | sortByDate | filterBySearch:search)" [routerLink]="['product', product.id]">
+        <app-product-card [myProduct]="product"></app-product-card>
+    </a>
 </div>
