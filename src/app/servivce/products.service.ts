@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 import { Size } from '../models/size.model';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -30,10 +32,11 @@ export class ProductsService {
       [new Size("M",3000),new Size("S",2000)]
     )
   ];
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllProducts(): Product[] {
-    return this.products;
+
+  getAllProducts(): Observable<Product[]> {
+    return <Observable<Product[]>>this.http.get('http://localhost:3000/products')
   }
 
   getOneProduct(id: number): Product | null{
