@@ -12,9 +12,9 @@ export class ProductCardComponent implements OnInit {
   selectedPrice: number = 0;
   validationState = false;
   imageUrl = "../../assets/svg/shopping-cart-plus.svg";
-  
-  constructor(private cartService: CartService) { }
-  
+
+  constructor(private cartService: CartService) {}
+
   ngOnInit(): void {
     this.selectedPrice = this.myProduct.price[0];
   }

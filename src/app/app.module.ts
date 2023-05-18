@@ -19,6 +19,7 @@ import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './confirmation/checkout.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent }
@@ -36,6 +37,7 @@ const routes: Routes = [
     ProductDetailComponent,
     AboutComponent,
     CartComponent,
+    CheckoutComponent,
   ],
   exports:[
     SortByDatePipe

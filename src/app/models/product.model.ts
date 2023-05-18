@@ -1,4 +1,4 @@
-import { Size } from "./size.model";
+import {Size} from "./size.model";
 
 export class Product {
     constructor(
@@ -9,7 +9,7 @@ export class Product {
         public price: Array<number>,
         public likes: number,
         public isLiked: boolean,
-        public date:Date,
-        public size?: Array<string>){
-        }
+        public date: Date,
+        public size?: Array<string>) {
     }
+}

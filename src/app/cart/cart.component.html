@@ -20,7 +20,7 @@
           </li>
         </ul>
         <div class="total-amount">Total: {{ cartService.getTotalPrice() | currency : 'EUR' }}</div>
-        <button class="checkout-button" [routerLink]="['/checkout']" [disabled]="cartService.getCart().length === 0">Checkout</button>
+        <button class="checkout-button" (click)="onCheckout()" [disabled]="cartService.getCart().length === 0">Checkout</button>
       </ng-container>
       <ng-template #emptyCart>
         <div class="empty-cart">Your cart is empty.</div>
