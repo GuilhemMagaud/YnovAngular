@@ -1,8 +1,5 @@
-<div>
-    Chercher : <input type="text" id="search" name="search" [(ngModel)]="search"/>
-</div>
-<div>
-    la recherche : {{search}}
+<div class="searchbar">
+    <p>Chercher : </p><input type="text" id="search" name="search" [(ngModel)]="search"/>
 </div>
 <div class="products">
     <a *ngFor="let product of (productsObservable | async | filterNull | sortByDate | filterBySearch:search )" [routerLink]="['product', product.id]">

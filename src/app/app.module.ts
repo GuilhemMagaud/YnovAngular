@@ -17,7 +17,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './about/about.component';
 import { FilterNullPipe } from './products-list/filter-null.pipe';
+import { FilterNullPipeSolo } from './product-detail/filternullsolo.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ProductDetailComponent,
     FilterNullPipe,
-    AboutComponent
+    FilterNullPipeSolo,
+    AboutComponent,
+    CartComponent
   ],
   exports:[
     SortByDatePipe
