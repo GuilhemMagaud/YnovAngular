@@ -9,7 +9,7 @@ import { ProductsService } from './servivce/products.service';
   styles: []
 })
 export class AppComponent implements OnInit{
-  products!: Product[];
+  products!: Product[] | null;
   search: string = '';
   title: string = '';
 
