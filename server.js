@@ -9,49 +9,123 @@ app.use(cors())
 
 const products = [
   {
-    id: 1,
-    title: "Peluche Harry Potter",
-    description: "Peluche certifiÃ©e OEKO-TEX, coton bio issue du commerce Ã©quitable, taille 12 cm ",
-    imageUrl: "https://media.auchan.fr/42f06d04-cd4f-4cf0-8d86-48c56c856e31_512x512/B2CD/",
-    price: 2300,
-    likes: 0,
-    isLiked: false,
-    createdDate: new Date('2022-02-28'),
-    sizes: [new Size("XL",3000),new Size("S",2000)]
+    "id": 0,
+    "name": "Peluche Hermione Granger",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psntn9f.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
   },
   {
-    id: 2,
-    title: "Peluche Ronnald Weasley",
-    description: "Peluche certifiÃ©e OEKO-TEX, coton bio issue du commerce Ã©quitable, taille 12 cm ",
-    imageUrl: "https://media.auchan.fr/0f9dcc51-564c-45d8-bda1-a27cf1db4703_512x512/B2CD/",
-    price: 2100,
-    likes: 0,
-    isLiked: false,
-    createdDate: new Date('2022-02-27'),
-    sizes: [new Size("M",3000),new Size("S",2000)]
+    "id": 1,
+    "name": "Peluche Harry Potter",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psk003f.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 2,
+    "name": "Peluche Professeur Severus Rogue",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psmp9nd_1.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 3,
+    "name": "Peluche Ron Weasley",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psk018a_4.jpg",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 4,
+    "name": "Peluche Dobby",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psnseie.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 5,
+    "name": "Peluche Rubeus Hagrid",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psk00ya.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 6,
+    "name": "Peluche Lord Voldemort",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psk000c.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 7,
+    "name": "Peluche Magicien Dumbledore",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psk001d.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
+  },
+  {
+    "id": 8,
+    "name": "Peluche Draco Malfoy",
+    "description": "100% original, nouveau et avec son étiquette de licence officielle. Idéal pour les cadeaux, idéal pour les enfants. Âge minimum 12 mois.",
+    "image": "https://www.illufantasy.com/media/catalog/product/cache/177ee782e41b4381c1b78a35396cbb5d/a/h/ah9psmp9mc_1.webp",
+    "prices": [25, 30, 40],
+	"likes": 0,
+    "isLiked": false,
+    "quantity": 0,
+    "available": false,
+    "releaseDate": "2023-01-01",
+    "sizes": ["Petit", "Moyen", "Grand"]
   }
-]
-
-const orderIds = [
-  {
-    id: 1,
-    contactNme: "LoÃ¯se Fenoll",
-    status: "Completed",
-    orderId: "azerttyicp"
-  },
-  {
-    id: 2,
-    contactNme: "Jane Birkin",
-    status: "Shipped",
-    orderId: "ugyiuoijkbj"
-  },
-  {
-    id: 3,
-    contactNme: "Nicola Sirkis",
-    status: "Payed",
-    orderId: "yugumlkmlm"
-  }
-]
+ ]
 
 app.get('/products', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
