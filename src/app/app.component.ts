@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './models/product.model';
 import { Size } from './models/size.model';
 import { ProductsService } from './servivce/products.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ProductsService } from './servivce/products.service';
   styles: []
 })
 export class AppComponent implements OnInit{
-  products!: Product[] | null;
+  products!: Product[] | Observable<Product[]>;
   search: string = '';
   title: string = '';
 

@@ -16,8 +16,8 @@ const products = [
     price: 2300,
     likes: 0,
     isLiked: false,
-    createdDate: new Date('2022-02-28'),
-    sizes: [new Size("XL",3000),new Size("S",2000)]
+    date: new Date('2022-02-28'),
+    sizes: [{taille: "XL",price: 3000},{taille: "S", price: 2000}]
   },
   {
     id: 2,
@@ -27,11 +27,10 @@ const products = [
     price: 2100,
     likes: 0,
     isLiked: false,
-    createdDate: new Date('2022-02-27'),
-    sizes: [new Size("M",3000),new Size("S",2000)]
+    date: new Date('2022-02-27'),
+    sizes: [{taille: "M",price: 3000},{taille: "S", price: 2000}]
   }
 ]
-
 const orderIds = [
   {
     id: 1,
@@ -57,7 +56,6 @@ app.get('/products', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   res.json(products)
 });
-
 app.get('/products/:id', (req, res) => {
   const id = req.params.id;
   res.set('Access-Control-Allow-Origin', '*');

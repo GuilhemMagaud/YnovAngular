@@ -1,2 +1,2 @@
-<app-product-card *ngIf="myProduct != null;" [myProduct]="myProduct" #elseBlock></app-product-card>
-<p *ngIf="myProduct == null">404 not found</p>
+<app-product-card *ngIf="myProductObservable != null;" [myProduct]="myProductObservable | async" #elseBlock></app-product-card>
+<p *ngIf="myProductObservable == null">404 not found</p>

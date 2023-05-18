@@ -1,8 +1,8 @@
-<h2>{{myProduct.title | uppercase}}</h2>
-<img src={{myProduct.imageUrl}} width=100 />
-<p>{{myProduct.description}}</p>
-<p *ngIf="myProduct.sizes">plusieur taille dispo</p>
-<select (change)="SizeSelected($event)">
+<h2 *ngIf="myProduct">{{myProduct.title | uppercase}}</h2>
+<img *ngIf="myProduct" src={{myProduct.imageUrl}} width=100 />
+<p *ngIf="myProduct">{{myProduct.description}}</p>
+<p  *ngIf="myProduct && myProduct.sizes">plusieur taille dispo</p>
+<select *ngIf="myProduct" (change)="SizeSelected($event)">
     <option *ngFor="let siz of myProduct.sizes" [value]="siz.price">
         taille {{siz.taille}}
     </option>
@@ -10,8 +10,8 @@
 <b>{{value | currency: 'EUR'}} </b>
 <!--<b>{{myProduct.price | currency: 'EUR'}}</b>-->
 <p>
-    <b>{{myProduct.likes}} ♦</b>
-    <button (click)="onAddLike()">Like</button>
+    <b *ngIf="myProduct">{{myProduct.likes}} ♦</b>
+    <button (click)="onLike()">Like</button>
 </p>
-<p>{{myProduct.date | date:'EEEE d MMMM y' }}</p>
+<p *ngIf="myProduct">{{myProduct.date | date:'EEEE d MMMM y' }}</p>
 

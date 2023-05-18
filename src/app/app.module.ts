@@ -16,6 +16,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './about/about.component';
+import { FilterNullPipe } from './products-list/filter-null.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     FooterComponent,
     ProductDetailComponent,
+    FilterNullPipe,
     AboutComponent
   ],
   exports:[
@@ -39,6 +42,7 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [{

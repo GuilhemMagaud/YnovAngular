@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ProductsService {
+  /*
   products: Product[] = [
     new Product(
       1,
@@ -32,6 +33,7 @@ export class ProductsService {
       [new Size("M",3000),new Size("S",2000)]
     )
   ];
+  */
   constructor(private http: HttpClient) { }
 
 
@@ -39,8 +41,8 @@ export class ProductsService {
     return <Observable<Product[]>>this.http.get('http://localhost:3000/products')
   }
 
-  getOneProduct(id: number): Product | null{
-      return this.products.find((p) => p.id === id) || null;
+  getOneProduct(id: number){
+      return <Observable<Product>>this.http.get(`http://localhost:3000/products/${id}`)
     }
 
     onLikePoduct(product : Product){
@@ -52,5 +54,8 @@ export class ProductsService {
       product.likes--;
       product.isLiked=false;
     }
+  }
+  OnLikeProduct (product: Product): Observable<Product> {
+    return <Observable<Product>> this.http.put(`http://localhost:3000/products/${product.id}/likes`, {})
   }
 }

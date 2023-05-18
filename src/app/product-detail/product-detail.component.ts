@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product.model';
 import { ProductsService } from '../servivce/products.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,7 +11,7 @@ import { ProductsService } from '../servivce/products.service';
   ]
 })
 export class ProductDetailComponent implements OnInit {
-  myProduct: Product | null = null;
+  myProductObservable!: Observable<Product>;
   id: number = 0;
   orientation: string = '';
 
@@ -20,13 +21,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.myProduct = this.productsService.getOneProduct(this.id);
+    this.myProductObservable = this.productsService.getOneProduct(this.id)
     this.orientation = "landscape";
-  }
-
-  onLike(){
-    if (this.myProduct != null){
-      this.productsService.onLikePoduct(this.myProduct);
-    }
   }
 }

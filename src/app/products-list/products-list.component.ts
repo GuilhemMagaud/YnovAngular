@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ProductsService } from '../servivce/products.service';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-products-list',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
   ]
 })
 export class ProductsListComponent implements OnInit{
-  public productsObservable : Observable<Product[]> = new Observable();
+  public productsObservable !: Observable<Product[]>;
   search: string = '';
   title: string = '';
 
@@ -21,5 +22,4 @@ export class ProductsListComponent implements OnInit{
     this.search = "";
     this.title = "my HP app";
   }
-
 }
