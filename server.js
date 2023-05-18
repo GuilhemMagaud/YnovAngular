@@ -19,7 +19,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 1,
@@ -32,7 +32,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 2,
@@ -45,7 +45,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 3,
@@ -58,7 +58,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 4,
@@ -71,7 +71,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 5,
@@ -84,7 +84,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 6,
@@ -97,7 +97,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 7,
@@ -110,7 +110,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   },
   {
     "id": 8,
@@ -123,7 +123,7 @@ const products = [
     "quantity": 0,
     "available": false,
     "date": "2023-01-01",
-    "sizes": ["Petit", "Moyen", "Grand"]
+    "size": ["Petit", "Moyen", "Grand"]
   }
 ]
 const orderIds = [

@@ -69,8 +69,13 @@ export class ProductCardComponent implements OnInit {
 
   private checkIfProductPage(): void {
     this.route.url.subscribe(urlSegments => {
-      const productRoute = `product/${this.myProduct.id}`;
-      this.isProductPage = urlSegments.join('/') === productRoute;
+      const isProductPage = urlSegments[0]?.path === 'product';
+      this.isProductPage = isProductPage;
     });
   }
+  
+  hasSize(): boolean {
+    return !!this.myProduct?.size && this.isProductPage;
+  }
+  
 }
