@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  template: `
-    <p>
-      header works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  @Output() searchInput = new EventEmitter<string>();
+  search: string = '';
 
+  onSearchChange() {
+    this.searchInput.emit(this.search.trim());
+  }
+  cartItemCount = localStorage.getItem('cartItemCount');
 }

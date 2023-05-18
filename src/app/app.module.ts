@@ -16,7 +16,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './about/about.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
+const routes: Routes = [
+  { path: 'cart', component: CartComponent }
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +34,8 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     FooterComponent,
     ProductDetailComponent,
-    AboutComponent
+    AboutComponent,
+    CartComponent,
   ],
   exports:[
     SortByDatePipe
@@ -39,7 +46,9 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [{
     provide: LOCALE_ID,
