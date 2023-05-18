@@ -31,9 +31,9 @@ export class OrdersService {
         }
     }
 
-    setNewOrder(products: { product: Product; size: string | null; quantity: number }[], customer: { nom: String; prenom: string; email: String }): number {
+    setNewOrder(products: { product: Product; size: string | null; quantity: number }[], customer: { nom: String; prenom: String; email: String }): number {
         const newId = this.getNewId();
-        const newOrder = new Order(newId, products, {email: null});
+        const newOrder = new Order(newId, products, customer);
         //TODO envoyer le newOrder dans la base de données;
         this.orders.push(newOrder);
 

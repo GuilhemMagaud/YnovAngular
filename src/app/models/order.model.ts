@@ -9,7 +9,9 @@ export class Order {
             quantity : number,
         }[],
         public customer : {
-            email : String|null,
+            nom: String,
+            prenom: String,
+            email : String,
         }) {
     }
 }
