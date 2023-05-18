@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { registerLocaleData } from '@angular/common';
 import { SortByDatePipe } from './sort-by-date.pipe';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -50,7 +50,8 @@ const routes: Routes = [
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [{
     provide: LOCALE_ID,

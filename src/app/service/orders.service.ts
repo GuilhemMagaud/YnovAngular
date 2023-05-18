@@ -31,7 +31,7 @@ export class OrdersService {
         }
     }
 
-    setNewOrder(products: { product: Product; size: string | null; quantity: number }[]): number {
+    setNewOrder(products: { product: Product; size: string | null; quantity: number }[], customer: { nom: String; prenom: string; email: String }): number {
         const newId = this.getNewId();
         const newOrder = new Order(newId, products, {email: null});
         //TODO envoyer le newOrder dans la base de données;
