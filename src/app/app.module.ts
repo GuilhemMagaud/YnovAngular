@@ -11,6 +11,15 @@ import { registerLocaleData } from '@angular/common';
 import { SortByDatePipe } from './sort-by-date.pipe';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AboutComponent } from './about/about.component';
+import { FilterNullPipe } from './products-list/filter-null.pipe';
+import { FilterNullPipeSolo } from './product-detail/filternullsolo.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -18,7 +27,15 @@ import { SearchPipe } from './search.pipe';
     AppComponent,
     ProductCardComponent,
     SortByDatePipe,
-    SearchPipe
+    SearchPipe,
+    ProductsListComponent,
+    HeaderComponent,
+    FooterComponent,
+    ProductDetailComponent,
+    FilterNullPipe,
+    FilterNullPipeSolo,
+    AboutComponent,
+    CartComponent
   ],
   exports:[
     SortByDatePipe
@@ -28,7 +45,9 @@ import { SearchPipe } from './search.pipe';
     MatSliderModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [{
     provide: LOCALE_ID,
