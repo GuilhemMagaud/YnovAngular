@@ -1,23 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from './models/product.model';
-import { Size } from './models/size.model';
-import { ProductsService } from './servivce/products.service';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: `./app.component.html`,
+  templateUrl: './app.component.html',
   styles: []
 })
-export class AppComponent implements OnInit{
-  products!: Product[];
-  search: string = '';
-  title: string = '';
+export class AppComponent {
 
-  constructor(private productsServices: ProductsService) {}
-  
-  ngOnInit() {
-    this.search = "";
-    this.products = this.productsServices.getAllProducts();
-    this.title = "my HP app"
-  }
 }

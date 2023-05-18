@@ -1,0 +1,6 @@
+<div style="text-align:center">
+    <app-header (searchInput)="onSearchInput($event)"></app-header>
+   </div>
+  <div class="products">
+    <app-product-card *ngFor="let product of filteredProducts" [myProduct]="product"></app-product-card>
+  </div>

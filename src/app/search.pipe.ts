@@ -5,9 +5,14 @@ import { Product } from './models/product.model';
   name: 'filterBySearch'
 })
 export class SearchPipe implements PipeTransform {
-
-  transform(products: Product[], searchresult: String): Product[] {
-    return products.filter(s => s.title.toLowerCase().indexOf(searchresult.toLocaleLowerCase()) !== -1)
+  transform(products: Product[], search: string): Product[] {
+    if (!search) {
+      return products; // Si la recherche est vide, renvoie tous les produits sans filtrage
+    }
+    
+    const searchValue = search.toLowerCase().trim();
+    return products.filter((product: Product) =>
+      product.title.toLowerCase().includes(searchValue)
+    );
   }
-
 }

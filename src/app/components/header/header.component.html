@@ -1,0 +1,11 @@
+<header class="header">
+  <img class="logo" src="assets/logo.png" alt="Logo">
+  <h1 class="title">Plushy</h1>
+  <div class="search-container">
+    <input class="search-input" type="text" [(ngModel)]="search" (input)="onSearchChange()" placeholder="Search...">
+    <span class="fas fa-search search-icon"></span>
+  </div>
+  <button routerLink="/cart" class="cart-button">
+    <img src="../../../assets/cart.png" alt="Cart Icon" />{{cartItemCount}}
+  </button>
+</header>
