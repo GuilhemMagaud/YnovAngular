@@ -2,7 +2,7 @@
     <p>Chercher : </p><input type="text" id="search" name="search" [(ngModel)]="search"/>
 </div>
 <div class="products">
-    <a *ngFor="let product of (productsObservable | async | filterNull | sortByDate | filterBySearch:search )" [routerLink]="['product', product.id]">
+    <div *ngFor="let product of (productsObservable | async | filterNull | sortByDate | filterBySearch:search )" [routerLink]="['product', product.id]">
         <app-product-card [myProduct]="product"></app-product-card>
-    </a>
+    </div>
 </div>
