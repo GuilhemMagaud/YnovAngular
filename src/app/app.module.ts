@@ -16,18 +16,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './about/about.component';
-import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './confirmation/checkout.component';
 import { FilterNullPipe } from './products-list/filter-null.pipe';
 import { FilterNullPipeSolo } from './product-detail/filternullsolo.pipe';
-import { HttpClientModule } from '@angular/common/http';
-import { CartComponent } from './cart/cart.component';
-
-const routes: Routes = [
-  { path: 'cart', component: CartComponent }
-];
 
 @NgModule({
   declarations: [
@@ -41,7 +34,6 @@ const routes: Routes = [
     ProductDetailComponent,
     FilterNullPipe,
     FilterNullPipeSolo,
-    AboutComponent,
     AboutComponent,
     CartComponent,
     CheckoutComponent,
@@ -58,7 +50,6 @@ const routes: Routes = [
     HttpClientModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
   providers: [{

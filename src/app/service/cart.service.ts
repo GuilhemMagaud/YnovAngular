@@ -18,7 +18,7 @@ export class CartService {
     }
   }
 
-  private saveCartToLocalStorage(): void {
+  private saveCartInLocalStorage(): void {
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
@@ -34,7 +34,7 @@ export class CartService {
       this.cart.push({ product: productToAdd, size: selectedSize, quantity });
     }
 
-    this.saveCartToLocalStorage();
+    this.saveCartInLocalStorage();
   }
 
   getPriceForItem(item: { product: Product; size: string | null }): number {
@@ -60,7 +60,7 @@ export class CartService {
 
     if (existingProductIndex >= 0) {
       this.cart[existingProductIndex].quantity += 1;
-      this.saveCartToLocalStorage();
+      this.saveCartInLocalStorage();
     }
   }
 
@@ -75,7 +75,7 @@ export class CartService {
       if (this.cart[existingProductIndex].quantity <= 0) {
         this.cart.splice(existingProductIndex, 1);
       }
-      this.saveCartToLocalStorage();
+      this.saveCartInLocalStorage();
     }
   }
 
@@ -86,7 +86,7 @@ export class CartService {
 
     if (existingProductIndex >= 0) {
       this.cart.splice(existingProductIndex, 1);
-      this.saveCartToLocalStorage();
+      this.saveCartInLocalStorage();
     }
   }
 

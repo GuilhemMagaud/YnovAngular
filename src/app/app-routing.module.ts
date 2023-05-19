@@ -5,7 +5,6 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './confirmation/checkout.component';
-import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [

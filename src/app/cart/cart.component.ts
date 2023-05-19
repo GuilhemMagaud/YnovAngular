@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
-import {OrdersService} from "../orders.service"
+import { CartService } from '../service/cart.service';
+import { OrdersService } from "../service/orders.service"
 import { Product } from '../models/product.model';
 import {NavigationExtras, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
