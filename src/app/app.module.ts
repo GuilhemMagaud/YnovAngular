@@ -9,18 +9,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { registerLocaleData } from '@angular/common';
 import { SortByDatePipe } from './sort-by-date.pipe';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AboutComponent } from './about/about.component';
+import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './confirmation/checkout.component';
 import { FilterNullPipe } from './products-list/filter-null.pipe';
 import { FilterNullPipeSolo } from './product-detail/filternullsolo.pipe';
-import { HttpClientModule } from '@angular/common/http';
-import { CartComponent } from './cart/cart.component';
-
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { CartComponent } from './cart/cart.component';
     FilterNullPipe,
     FilterNullPipeSolo,
     AboutComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent,
   ],
   exports:[
     SortByDatePipe
@@ -47,7 +48,9 @@ import { CartComponent } from './cart/cart.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: LOCALE_ID,

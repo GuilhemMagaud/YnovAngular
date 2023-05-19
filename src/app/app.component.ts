@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   title: string = '';
 
   constructor(private productsServices: ProductsService) {}
-  
+
   ngOnInit() {
     this.search = "";
     this.products = this.productsServices.getAllProducts();

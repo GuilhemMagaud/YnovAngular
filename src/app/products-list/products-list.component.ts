@@ -16,7 +16,7 @@ export class ProductsListComponent implements OnInit{
   title: string = '';
 
   constructor(private productsServices: ProductsService) {}
-  
+
   ngOnInit() {
     this.productsObservable = this.productsServices.getAllProducts();
     this.search = "";
