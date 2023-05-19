@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../service/cart.service';
-import {OrdersService} from "../service/orders.service"
+import { CartService } from '../cart.service';
+import {OrdersService} from "../orders.service"
+import { Product } from '../models/product.model';
 import {NavigationExtras, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 @Component({
@@ -21,6 +22,21 @@ export class CartComponent {
       prenom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
+  }
+
+  decreaseQuantity(product: Product, size: string | null): void {
+    const existingProductIndex = this.cartService.getCart().findIndex(
+      (item) => item.product.title === product.title && item.size === size
+    );
+
+    if (existingProductIndex >= 0) {
+      const item = this.cartService.getCart()[existingProductIndex];
+      if (item.quantity > 1) {
+        this.cartService.decreaseQuantity(product, size);
+      } else {
+        this.cartService.removeFromCart(product, size);
+      }
+    }
   }
 
   submitForm() {

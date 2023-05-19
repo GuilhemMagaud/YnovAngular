@@ -1,35 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
-import { Size } from '../models/size.model';
-import { ProductsService } from '../service/products.service';
+import { ProductsService } from '../servivce/products.service';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-products-list',
   templateUrl: `./products-list.component.html`,
-  styles: []
+  styles: [
+  ]
 })
-export class ProductsListComponent implements OnInit {
-  
-  products!: Product[];
+export class ProductsListComponent implements OnInit{
+  public productsObservable !: Observable<Product[]>;
   search: string = '';
-  filteredProducts: Product[] = [];
+  title: string = '';
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsServices: ProductsService) {}
 
   ngOnInit() {
-    this.search = '';
-    this.products = this.productsService.getAllProducts();
-    this.filterProducts();
-  }
-
-  onSearchInput(search: string) {
-    this.search = search;
-    this.filterProducts();
-  }
-
-  filterProducts() {
-    this.filteredProducts = this.products.filter((product: Product) =>
-      product.title.toLowerCase().includes(this.search.toLowerCase())
-    );
+    this.productsObservable = this.productsServices.getAllProducts();
+    this.search = "";
+    this.title = "my HP app";
   }
 }

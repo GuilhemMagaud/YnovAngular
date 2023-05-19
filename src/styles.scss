@@ -181,7 +181,7 @@ margin-right: 5px;
   display: flex;
   justify-content: center;
   width: 100%;
-  align-items: center; 
+  align-items: center;
 }
 
 .content-container {
@@ -236,4 +236,21 @@ vertical-align: top;
 text-align: center;
 margin: 3rem auto 0;
 font-size: 20px;
+}
+.searchbar{
+  margin-top: 8.5em;
+  background-color: #232f3e;
+  text-align: center;
+}
+
+.searchbar p{
+  padding-top: 2em;
+  font-size: 2vw;
+  color: white;
+}
+
+.searchbar input{
+  width: 50em;
+  height: 2em;
+  margin-bottom: 2em;
 }

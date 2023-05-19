@@ -1,6 +1,8 @@
-<div style="text-align:center">
-  <app-header (searchInput)="onSearchInput($event)"></app-header>
+<div class="searchbar">
+    <p>Chercher : </p><input type="text" id="search" name="search" [(ngModel)]="search"/>
 </div>
 <div class="products">
-  <app-product-card *ngFor="let product of filteredProducts" [myProduct]="product"[routerLink]="['product', product.id]"></app-product-card>
+    <a *ngFor="let product of (productsObservable | async | filterNull | sortByDate | filterBySearch:search )" [routerLink]="['product', product.id]">
+        <app-product-card [myProduct]="product"></app-product-card>
+    </a>
 </div>

@@ -1,24 +1,23 @@
 <div class="product-card">
     <img class="product-image" [src]="myProduct.imageUrl" alt="Product image" />
-    <h2 class="product-item-name">{{myProduct.title | uppercase}}</h2>
-    <p class="product-item">{{myProduct.description}}</p>
-    <p class="article-date">{{myProduct.date | date:'EEEE d MMMM y' }}</p>
-    <p class="article-size" *ngIf="myProduct.size">Plusieurs tailles disponibles</p>
-    <select class="product-item" (change)="onSizeSelected($event)">
-      <option *ngFor="let size of myProduct.size; let i = index" [value]="myProduct.price[i]">
-        Taille {{size}}
+    <h2 class="product-item-name">{{ myProduct.title | uppercase }}</h2>
+    <p class="product-item">{{ myProduct.description }}</p>
+    <p class="article-date">{{ myProduct.date | date:'EEEE d MMMM y' }}</p>
+    <p class="article-size" *ngIf="hasSize()">Plusieurs tailles disponibles</p>
+    <select class="product-item" (change)="onSizeSelected($event)" *ngIf="hasSize()">
+      <option *ngFor="let size of myProduct.size" [value]="size">
+        Taille {{ size }}
       </option>
     </select>
-    <p class="product-price">{{selectedPrice | currency: 'EUR'}}</p>
-    
-    <div class="buttons-container">
+    <p class="product-price" *ngIf="hasSize()">{{ getPriceForSelectedSize() | currency: 'EUR' }}</p>
+
+    <div class="buttons-container" *ngIf="isProductPage && hasSize()">
       <button class="add-to-cart-button" (click)="onAddToCart()">
         <i class="fas fa-cart-plus"></i>
         Ajouter au panier
       </button>
       <button class="product-button" (click)="onAddLike()">
-        <b>{{myProduct.likes}}</b> ♥
+        <b>{{ myProduct.likes }}</b> ♥
       </button>
     </div>
   </div>
-  

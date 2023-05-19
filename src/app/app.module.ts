@@ -20,6 +20,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './confirmation/checkout.component';
+import { FilterNullPipe } from './products-list/filter-null.pipe';
+import { FilterNullPipeSolo } from './product-detail/filternullsolo.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent }
@@ -35,6 +39,9 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     ProductDetailComponent,
+    FilterNullPipe,
+    FilterNullPipeSolo,
+    AboutComponent,
     AboutComponent,
     CartComponent,
     CheckoutComponent,
@@ -48,6 +55,7 @@ const routes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
